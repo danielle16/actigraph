@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/actigraph_log.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../js/actigraph_log.js"></script>
+</head>
+
+<body>
+    
+    <div class="jumbotron jumbotron-fluid">
+            <h3 class="display-4 text-center">Welcome !</h3>
+            <h3 class="lead text-center">'s Actigraph Record of Wear</h3>
+            </div>   
+        <P>
+            <!--b #{COUNT} day(s) left! -->
+        </P>
+    
+     <div class="container-fluid box">
+         
+        <form id="actigraph_log" method="POST" action="submit">
+            <input id="encoded_id" type="hidden" name="parent_id">
+            <input id="days_left" type="hidden" name="count">
+            <ul class="list-group">
+                <li><span class="fa fa-calendar"></span>
+                    <label class="big_label" for="record_date">Actigraph's Record Date</label>
+                    <label class="big_label underline"></label>
+                    <input id="datesel" type="hidden" name="record_date">
+                </li>
+                
+                <li class="list-group-item"><span class="glyphicon glyphicon-time"></span>
+                    <label for="main_time_on">Time On:</label>
+                    <input type="time" id="main_time_on" name="main_time_on">
+                </li>
+                <li class="list-group-item"><span class="glyphicon glyphicon-time"></span>
+                    <label for="main_time_off">Time Off:</label>
+                    <input type="time" id="main_time_off" name="main_time_off">
+                </li>
+    
+            </ul>
+            <p>If the monitor was removed during the times you entered above (waking hours only), list those times and reasons for each removal below.</p>
+<!--            <p> This link will expire once you press SUBMIT.</p>-->
+            <ul id="first_log" class="list-group">
+                <li class="list-group-item"><span class="glyphicon glyphicon-time"></span>
+                    <label for="time_off_1">Time Taken Off:</label>
+                    <input type="time" id="time_off_1" name="time_off_1">
+                </li>
+                <li class="list-group-item"><span class="glyphicon glyphicon-time"></span>
+                    <label for="time_on_1">Time Back On:</label>
+                    <input type="time" id="time_on_1" name="time_on_1">
+                </li>
+                <li class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>
+                    <label for="reason_off_1">Reason Took Off:</label>
+                    <input type="text" id="reason_off_1" name="reason_off_1">
+                </li>
+                <li>
+                    <p>To add another removal record, click on the button 'Add another record'.</p>
+                    <button class="btn btn-info add_record" type="button">Add another record</button>
+                </li>
+            </ul>
+            <ul id="second_log" class="list-group">
+                <li class="list-group-item"><span class="glyphicon glyphicon-time"></span>
+                    <label for="time_off_2">Time Taken Off:</label>
+                    <input type="time" id="time_off_2" name="time_off_2">
+                </li>
+                <li class="list-group-item"><span class="glyphicon glyphicon-time"></span>
+                    <label for="time_on_2">Time Back On:</label>
+                    <input type="time" id="time_on_2" name="time_on_2">
+                </li>
+                <li class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>
+                    <label for="reason_off_2">Reason Took Off:</label>
+                    <input type="text" id="reason_off_2" name="reason_off_2">
+                </li>
+                <li>
+                    <button class="btn btn-info add_record" type="button">Add another record</button>
+                </li>
+            </ul>
+            <ul id="third_log" class="list-group">
+                <li class="list-group-item"><span class="glyphicon glyphicon-time"></span>
+                    <label for="time_off_3">Time Taken Off:</label>
+                    <input type="time" id="time_off_3" name="time_off_3">
+                </li>
+                <li class="list-group-item"><span class="glyphicon glyphicon-time"></span>
+                    <label for="time_on_3">Time Back On:</label>
+                    <input type="time" id="time_on_3" name="time_on_3">
+                </li>
+                <li class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>
+                    <label for="reason_off_3">Reason Took Off:</label>
+                    <input type="text" id="reason_off_3" name="reason_off_3">
+                </li>
+            </ul>
+            <p>Please make sure you record all the logs for the day at once and click "Submit Log" when you are finished.</p>
+            <input class="btn btn-primary" type="submit" name="submit" value="Submit Log">
+        </form>
+    </div>
+</body>
+
+</html>
